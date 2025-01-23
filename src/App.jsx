@@ -8,6 +8,7 @@ import { MovieProvider } from "./context/MovieProvider";
 function App() {
   const [movie, setMovie] = useState([]);
   const [movieRate, setMovieRate] = useState([]);
+  const [movieDetail, setMovieDetail] = useState([]);
   const [movieSearch, setMovieSearch] = useState([]);
 
   const handleSearch = async (searchVal) => {
@@ -43,16 +44,21 @@ function App() {
         "https://api.themoviedb.org/3/movie/popular?language=vi&page=1";
       const urlTopRate =
         "https://api.themoviedb.org/3/movie/top_rated?language=vi&page=1";
+      const urlDetail =
+        "https://api.themoviedb.org/3/movie/265712?language=en-US";
 
-      const [resPopular, resTopRate] = await Promise.all([
+      const [resPopular, resTopRate, resDetail] = await Promise.all([
         fetch(urlPopular, options),
         fetch(urlTopRate, options),
+        fetch(urlDetail, options),
       ]);
 
       const dataPopular = await resPopular.json();
       const dataTopRate = await resTopRate.json();
+      const dataDetail = await resDetail.json();
 
       setMovie(dataPopular.results);
+      setMovieDetail(dataDetail);
       setMovieRate(dataTopRate.results);
     };
 
@@ -68,7 +74,7 @@ function App() {
             <MovieSearch title="Kết quả tìm kiếm" data={movieSearch} />
           ) : (
             <>
-              <Banner />
+              <Banner data={movieDetail} />
               <MovieList title="Phim hot" data={movie} />
               <MovieList title="Phim đề cử" data={movieRate} />
             </>

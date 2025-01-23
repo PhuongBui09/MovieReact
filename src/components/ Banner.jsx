@@ -3,11 +3,16 @@ import IconRatingHalf from "../assets/rating-half.png";
 import ImgTemp from "../assets/temp-1.jpeg";
 import IconPlay from "../assets/play-button.png";
 
-const Banner = () => {
+const Banner = ({ data }) => {
   return (
     <div
-      className="w-full h-[600px] bg-banner bg-no-repeat
+      className="w-full h-[600px] bg-no-repeat
     bg-center bg-cover relative"
+      style={{
+        backgroundImage: `url(${import.meta.env.VITE_IMAGE_URL}${
+          data.poster_path
+        })`,
+      }}
     >
       <div className="absolute w-full h-full top-0 left-0 bg-black/40" />
       <div
@@ -20,7 +25,7 @@ const Banner = () => {
           </p>
           <div className="flex flex-col space-y-4">
             <h2 className="text-white text-[20px] lg:text-[30px] font-bold">
-              Nghe nói em thích tôi
+              {data.title}
             </h2>
           </div>
           <div className="flex items-center space-x-4">
@@ -50,10 +55,7 @@ const Banner = () => {
               alt="rating"
             />
           </div>
-          <p className="text-white text-[14px] lg:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
-            tempor incidunt ut labore et dolore magna aliqua.
-          </p>
+          <p className="text-white text-[14px] lg:text-base">{data.overview}</p>
           <div className="flex items-center space-x-4">
             <button className="bg-black text-white font-bold text-md lg:text-lg py-1 px-2 rounded-sm">
               Chi tiết
@@ -66,7 +68,7 @@ const Banner = () => {
         <div className="w-full lg:w-[50%] flex items-center justify-center p-0 mt-8">
           <div className="w-[170px] h-[280px] lg:w-[300px] lg:h-[500px] bg-white/20 relative group cursor-pointer">
             <img
-              src={ImgTemp}
+              src={`${import.meta.env.VITE_IMAGE_URL}${data.poster_path}`}
               alt="temp"
               className="w-full h-full object-cover"
             />
