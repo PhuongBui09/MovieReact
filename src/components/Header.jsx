@@ -10,7 +10,7 @@ const Header = ({ onSearch }) => {
     <div className="p-4 bg-black flex items-center justify-between">
       {/* Logo + Navigation */}
       <div className="flex items-center space-x-4">
-        <h1 className="text-[25px] uppercase font-bold text-red-700">
+        <h1 className="text-[20px] lg:text-[25px] uppercase font-bold text-red-700">
           React-Movie
         </h1>
 
@@ -77,6 +77,20 @@ const Header = ({ onSearch }) => {
           <a href="#" className="text-white">
             Contact
           </a>
+          <div className="flex items-center space-x-4">
+            <input
+              className="p-1 w-[180px] rounded-md"
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setTextSearch(e.target.value)}
+            />
+            <button
+              className="py-1 px-3 bg-red-600 rounded-md text-white font-bold text-sm"
+              onClick={() => onSearch(textSearch)}
+            >
+              Search
+            </button>
+          </div>
         </div>
       )}
     </div>

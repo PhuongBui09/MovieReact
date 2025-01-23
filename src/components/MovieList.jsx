@@ -33,7 +33,7 @@ const MovieList = ({ title, data }) => {
           data.map((item) => (
             <div
               key={item.id}
-              className="w-[150px] h-[250px] lg:w-[190px] lg:h-[290px] relative group"
+              className="w-[120px] h-[200px] lg:w-[190px] lg:h-[290px] relative group"
               onClick={() => handleTrailer(item.id)}
             >
               <div className="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full cursor-pointer">

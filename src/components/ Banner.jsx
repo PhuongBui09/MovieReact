@@ -11,15 +11,15 @@ const Banner = () => {
     >
       <div className="absolute w-full h-full top-0 left-0 bg-black/40" />
       <div
-        className="w-full h-full flex flex-col lg:flex-row items-center
-        lg:justify-center lg:space-x-[30px] p-8 relative z-20"
+        className="w-full h-full flex flex-col p-6 lg:flex-row items-center
+        lg:justify-center lg:space-x-[30px] lg:p-8 relative z-20"
       >
-        <div className="flex flex-col space-y-4 items-baseline w-[50%]">
+        <div className="flex flex-col space-y-4 items-baseline lg:w-[50%]">
           <p className="text-white text-sm lg:text-md bg-gradient-to-r from-red-600 to-red-300 py-1 px-3 rounded-sm">
             TV Show
           </p>
           <div className="flex flex-col space-y-4">
-            <h2 className="text-white text-[14px] lg:text-[30px] font-bold">
+            <h2 className="text-white text-[20px] lg:text-[30px] font-bold">
               Nghe nói em thích tôi
             </h2>
           </div>
@@ -30,41 +30,41 @@ const Banner = () => {
               alt="rating"
             />
             <img
-              className="lg:w-8 lg:h-8 w-6 h-6"
+              className="lg:w-8 lg:h-8 w-5 h-5"
               src={IconRating}
               alt="rating"
             />
             <img
-              className="lg:w-8 lg:h-8 w-6 h-6"
+              className="lg:w-8 lg:h-8 w-5 h-5"
               src={IconRating}
               alt="rating"
             />
             <img
-              className="lg:w-8 lg:h-8 w-6 h-6"
+              className="lg:w-8 lg:h-8 w-5 h-5"
               src={IconRating}
               alt="rating"
             />
             <img
-              className="lg:w-8 lg:h-8 w-6 h-6"
+              className="lg:w-8 lg:h-8 w-5 h-5"
               src={IconRatingHalf}
               alt="rating"
             />
           </div>
-          <p className="text-white text-sm lg:text-base">
+          <p className="text-white text-[14px] lg:text-base">
             Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
             tempor incidunt ut labore et dolore magna aliqua.
           </p>
           <div className="flex items-center space-x-4">
-            <button className="bg-black text-white font-bold text-[12px] lg:text-lg py-1 px-2 rounded-sm">
+            <button className="bg-black text-white font-bold text-md lg:text-lg py-1 px-2 rounded-sm">
               Chi tiết
             </button>
-            <button className="bg-red-600 text-white font-bold text-[12px] lg:text-lg py-1 px-2 rounded-sm">
+            <button className="bg-red-600 text-white font-bold text-md lg:text-lg py-1 px-2 rounded-sm">
               Xem phim
             </button>
           </div>
         </div>
-        <div className="lg:w-full w-[50%] flex items-center justify-center p-0 mt-3">
-          <div className="w-[200px] h-[280px] lg:w-[300px] lg:h-[500px] bg-white/20 relative group cursor-pointer">
+        <div className="w-full lg:w-[50%] flex items-center justify-center p-0 mt-8">
+          <div className="w-[170px] h-[280px] lg:w-[300px] lg:h-[500px] bg-white/20 relative group cursor-pointer">
             <img
               src={ImgTemp}
               alt="temp"
