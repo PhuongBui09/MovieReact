@@ -28,7 +28,7 @@ const Banner = ({ data }) => {
             TV Show
           </p>
           <div className="flex flex-col space-y-4">
-            <h2 className="text-white text-[20px] lg:text-[30px] font-bold">
+            <h2 className="text-white text-[20px] lg:text-[30px] font-bold line-clamp-1">
               {data.title}
             </h2>
           </div>

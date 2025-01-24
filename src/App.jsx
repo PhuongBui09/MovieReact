@@ -44,16 +44,22 @@ function App() {
         "https://api.themoviedb.org/3/movie/popular?language=vi&page=1";
       const urlTopRate =
         "https://api.themoviedb.org/3/movie/top_rated?language=vi&page=1";
-      const urlDetail = "https://api.themoviedb.org/3/movie/939243?language=vi";
 
-      const [resPopular, resTopRate, resDetail] = await Promise.all([
+      const [resPopular, resTopRate] = await Promise.all([
         fetch(urlPopular, options),
         fetch(urlTopRate, options),
-        fetch(urlDetail, options),
       ]);
 
       const dataPopular = await resPopular.json();
       const dataTopRate = await resTopRate.json();
+
+      const randomMovieId =
+        dataPopular.results[
+          Math.floor(Math.random() * dataPopular.results.length)
+        ].id;
+      const urlDetail = `https://api.themoviedb.org/3/movie/${randomMovieId}?language=vi`;
+
+      const resDetail = await fetch(urlDetail, options);
       const dataDetail = await resDetail.json();
 
       setMovie(dataPopular.results);
