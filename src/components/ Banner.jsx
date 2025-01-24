@@ -9,9 +9,9 @@ const Banner = ({ data }) => {
       className="w-full h-[600px] bg-no-repeat
     bg-center bg-cover relative"
       style={{
-        backgroundImage: `url(${import.meta.env.VITE_IMAGE_URL}${
-          data.poster_path
-        })`,
+        backgroundImage: data?.poster_path
+          ? `url(${import.meta.env.VITE_IMAGE_URL}${data.poster_path})`
+          : "",
       }}
     >
       <div className="absolute w-full h-full top-0 left-0 bg-black/40" />
@@ -55,7 +55,9 @@ const Banner = ({ data }) => {
               alt="rating"
             />
           </div>
-          <p className="text-white text-[14px] lg:text-base">{data.overview}</p>
+          <p className="text-white text-[14px] lg:text-base line-clamp-3">
+            {data.overview}
+          </p>
           <div className="flex items-center space-x-4">
             <button className="bg-black text-white font-bold text-md lg:text-lg py-1 px-2 rounded-sm">
               Chi tiết
@@ -68,7 +70,11 @@ const Banner = ({ data }) => {
         <div className="w-full lg:w-[50%] flex items-center justify-center p-0 mt-8">
           <div className="w-[170px] h-[280px] lg:w-[300px] lg:h-[500px] bg-white/20 relative group cursor-pointer">
             <img
-              src={`${import.meta.env.VITE_IMAGE_URL}${data.poster_path}`}
+              src={
+                data?.poster_path
+                  ? `${import.meta.env.VITE_IMAGE_URL}${data.poster_path}`
+                  : ImgTemp
+              }
               alt="temp"
               className="w-full h-full object-cover"
             />

@@ -44,8 +44,7 @@ function App() {
         "https://api.themoviedb.org/3/movie/popular?language=vi&page=1";
       const urlTopRate =
         "https://api.themoviedb.org/3/movie/top_rated?language=vi&page=1";
-      const urlDetail =
-        "https://api.themoviedb.org/3/movie/265712?language=en-US";
+      const urlDetail = "https://api.themoviedb.org/3/movie/939243?language=vi";
 
       const [resPopular, resTopRate, resDetail] = await Promise.all([
         fetch(urlPopular, options),
