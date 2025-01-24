@@ -1,9 +1,13 @@
+import { useContext } from "react";
+import { MovieContext } from "../context/MovieProvider";
 import IconRating from "../assets/rating.png";
 import IconRatingHalf from "../assets/rating-half.png";
 import ImgTemp from "../assets/temp-1.jpeg";
 import IconPlay from "../assets/play-button.png";
 
 const Banner = ({ data }) => {
+  const { handleTrailer } = useContext(MovieContext);
+
   return (
     <div
       className="w-full h-[600px] bg-no-repeat
@@ -62,7 +66,10 @@ const Banner = ({ data }) => {
             <button className="bg-black text-white font-bold text-md lg:text-lg py-1 px-2 rounded-sm">
               Chi tiết
             </button>
-            <button className="bg-red-600 text-white font-bold text-md lg:text-lg py-1 px-2 rounded-sm">
+            <button
+              className="bg-red-600 text-white font-bold text-md lg:text-lg py-1 px-2 rounded-sm"
+              onClick={() => handleTrailer(data.id)}
+            >
               Xem phim
             </button>
           </div>
@@ -81,6 +88,7 @@ const Banner = ({ data }) => {
             <div
               className="w-full h-full absolute top-0 left-0 flex items-center justify-center
                     backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
+              onClick={() => handleTrailer(data.id)}
             >
               <img src={IconPlay} alt="play" className="w-16 h-16" />
             </div>

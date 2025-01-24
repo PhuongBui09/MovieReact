@@ -1,7 +1,7 @@
 import { useContext } from "react";
+import { MovieContext } from "../context/MovieProvider";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { MovieContext } from "../context/MovieProvider";
 
 const responsive = {
   superLargeDesktop: {
