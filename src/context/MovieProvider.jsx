@@ -17,7 +17,6 @@ const customStyles = {
     borderRadius: "10px",
     padding: "1px",
     maxWidth: "90vw",
-    width: "100%",
   },
 };
 
